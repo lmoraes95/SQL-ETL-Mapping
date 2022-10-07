@@ -1,16 +1,16 @@
-CREATE TABLE "IMDB_data_clean" (
+CREATE TABLE "imbd" (
     "index" int   NOT NULL,
-    "Series_Title" varchar   NOT NULL,
-    "Runtime_of_Series" varchar   NOT NULL,
-    "Genre" varchar   NOT NULL,
-    "IMDB_Rating" float   NOT NULL,
-    "No_of_Votes" int   NOT NULL,
+    "series_title" varchar   NOT NULL,
+    "runtime_of_series" varchar   NOT NULL,
+    "genre" varchar   NOT NULL,
+    "imdb_rating" float   NOT NULL,
+    "no_of_votes" int   NOT NULL,
     CONSTRAINT "pk_IMDB_data_clean" PRIMARY KEY (
-        "Series_Title"
+        "series_title"
      )
 );
 
-CREATE TABLE "Netflix_data_clean" (
+CREATE TABLE "netflix" (
     "index" int   NOT NULL,
     "type" varchar   NOT NULL,
     "title" varchar   NOT NULL,
@@ -20,3 +20,9 @@ CREATE TABLE "Netflix_data_clean" (
         "title"
      )
 );
+
+
+select *
+from imbd
+join netflix
+on series_title = title
